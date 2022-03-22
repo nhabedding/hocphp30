@@ -11,7 +11,7 @@ function kiemtra($n) {
     return true;
 }
  
-echo ("Các số nguyên tố nhỏ hơn 100  <br>");
+echo ("Các số nguyên tố nhỏ hơn 100 là  <br>");
 for($i = 0; $i < 100; $i ++) {
     if (kiemtra ( $i )) {
         echo ( " <b> $i ");

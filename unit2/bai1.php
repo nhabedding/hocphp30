@@ -6,6 +6,7 @@ for ($i=1; $i<=100 ; $i++) {
 	if($i%3==0 && $i%5==0){
 		echo " <b > FizzBuzz </b> <br> ";
 	}
+
 	else if ($i%3==0){
 		echo "  <i > Fizz </i> <br>";
 	}
@@ -13,6 +14,7 @@ for ($i=1; $i<=100 ; $i++) {
 		echo "  <u > Buzz </u> <br>";
 	}
 	else{
+		die();
 		echo " $i <br> ";
 	}
 }
