@@ -4,9 +4,9 @@
     function send_email($email_recive,$name,$contents,$subject){
         //https://www.google.com/settings/security/lesssecureapps
         // Khai báo thư viên phpmailer
-                require 'src/Exception.php';
-                require 'src/PHPMailer.php';
-                require 'src/SMTP.php';
+                require 'PHPMailer-6.6.0/src/Exception.php';
+                require 'PHPMailer-6.6.0/src/PHPMailer.php';
+                require 'PHPMailer-6.6.0/src/SMTP.php';
         // Khai báo tạo PHPMailer
         $mail = new PHPMailer();
         //Khai báo gửi mail bằng SMTP
@@ -30,10 +30,10 @@
         $mail->Port       = 587; // cổng để gửi mail
         $mail->SMTPSecure = "tls"; //Phương thức mã hóa thư - ssl hoặc tls
         $mail->SMTPAuth   = true; //Xác thực SMTP
-        $mail->Username   = "lengocha2502@gmail.com"; // Tên đăng nhập tài khoản Gmail
-        $mail->Password   = "Ha0389024998"; //Mật khẩu của gmail
-        $mail->SetFrom("halephp30@gmail.com", "le ha"); // Thông tin người gửi
-        $mail->AddReplyTo("halephp30@gmail.com","le ha");// Ấn định email sẽ nhận khi người dùng reply lại.
+        $mail->Username   = "halephp30@gmail.com"; // Tên đăng nhập tài khoản Gmail
+        $mail->Password   = "Ha25022000"; //Mật khẩu của gmail
+        $mail->SetFrom("lengocha2502@gmail.com", "le ha"); // Thông tin người gửi
+        $mail->AddReplyTo("lengocha2502@gmail.com","le ha");// Ấn định email sẽ nhận khi người dùng reply lại.
         $mail->AddAddress($email_recive, $name);//Email của người nhận
         //$mail->AddCC($email_recive, $name);//Email của người nhận
         $mail->Subject = $subject; //Tiêu đề của thư
@@ -64,6 +64,11 @@
 
         ';
     $subject = 'HỌC PHP tại Zent';
-    send_email('halephp30@gmail.com','le ha',$contents,$subject)
-    // $status= send_mail ;
+    
+    if (send_email('lengocha2502@gmail.com','le ha',$contents,$subject)) {
+    echo "gui thanh cong";
+    }else{
+        echo "gui that bai";
+    }
+    
 ?>
